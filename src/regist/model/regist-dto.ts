@@ -1,4 +1,3 @@
-import { PaymentType } from './payment-type.enum';
 
 export class RegistDto {
   id?: string;
