@@ -11,7 +11,7 @@ export class UserDataService {
   ) { }
 
   create(userData: UserDataDto): Promise<UserDataDto> {
-    // Data de criação: 2021-06-28T21:12:43.158Z ---> Fazer o método para a REF
+    userData.date = new Date();
     const createdUserData = new this.userDataModel(userData);
     return createdUserData.save();
   }

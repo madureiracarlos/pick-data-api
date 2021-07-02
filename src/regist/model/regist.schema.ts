@@ -1,11 +1,13 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { PaymentType } from './payment-type.enum';
 
 export type RegistDocument = Regist & Document;
 
 @Schema()
 export class Regist {
+
+  @Prop()
+  date?: Date; // Registry data
 
   @Prop()
   document: string;
@@ -15,6 +17,9 @@ export class Regist {
 
   @Prop()
   province: string;
+
+  @Prop()
+  phone: string;
 
   @Prop()
   address: string;

@@ -12,6 +12,9 @@ export class UserData {
   @Prop()
   password: string;
 
+  @Prop()
+  date?: Date;
+
 
 }
 

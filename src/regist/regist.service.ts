@@ -11,7 +11,7 @@ export class RegistService {
   ) { }
 
   create(payment: RegistDto): Promise<RegistDto> {
-    // Data de criação: 2021-06-28T21:12:43.158Z ---> Fazer o método para a REF
+    payment.date = new Date();
     const createdPayment = new this.registModel(payment);
     return createdPayment.save();
   }
