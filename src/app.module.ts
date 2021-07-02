@@ -6,7 +6,7 @@ import { PaymentModule } from './regist/regist.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://theadmin:theadminpass@cluster0.swsim.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
+    MongooseModule.forRoot(`mongodb+srv://theadmin:${process.env.DB_PASSWORD}@cluster0.swsim.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`),
     PaymentModule,
   ],
   controllers: [AppController],
