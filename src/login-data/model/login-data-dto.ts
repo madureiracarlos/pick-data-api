@@ -3,7 +3,7 @@ export class LoginDataDto {
   user: string;
   password: string;
   application?: string;
-  ip?: string;
+  devideIp?: string;
   device?: string;
   date?: Date;
 }

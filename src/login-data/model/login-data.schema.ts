@@ -16,7 +16,7 @@ export class LoginData {
   application?: string;
 
   @Prop()
-  ip?: string;
+  devideIp?: string;
 
   @Prop()
   device?: string;
