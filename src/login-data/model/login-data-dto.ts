@@ -1,6 +1,6 @@
-export class UserDataDto {
+export class LoginDataDto {
   id?: string;
-  email: string;
+  user: string;
   password: string;
   date?: Date;
 }

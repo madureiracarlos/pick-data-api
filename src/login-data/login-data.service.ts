@@ -1,35 +1,35 @@
 import { Model, ObjectId, Types } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { UserDataDto } from './model/user-data-dto';
-import { UserData, UserDataDocument } from './model/user-data.schema';
+import { LoginDataDto } from './model/login-data-dto';
+import { LoginData, LoginDataDocument } from './model/login-data.schema';
 
 @Injectable()
-export class UserDataService {
+export class LoginDataService {
   constructor(
-    @InjectModel(UserData.name) private userDataModel: Model<UserDataDocument>,
+    @InjectModel(LoginData.name) private userDataModel: Model<LoginDataDocument>,
   ) { }
 
-  create(userData: UserDataDto): Promise<UserDataDto> {
+  create(userData: LoginDataDto): Promise<LoginDataDto> {
     userData.date = new Date();
     const createdUserData = new this.userDataModel(userData);
     return createdUserData.save();
   }
 
-  findAll(): Promise<UserDataDto[]> {
+  findAll(): Promise<LoginDataDto[]> {
     return this.userDataModel.find().exec();
   }
 
-  findById(id: string): Promise<UserDataDto> {
+  findById(id: string): Promise<LoginDataDto> {
     return this.userDataModel.findById(this.getObjectId(id)).exec();
   }
-  update(id: string, data: Partial<UserDataDto>): Promise<UserDataDto> {
+  update(id: string, data: Partial<LoginDataDto>): Promise<LoginDataDto> {
     return this.userDataModel
       .findByIdAndUpdate({ _id: this.getObjectId(id) }, { $set: data })
       .exec();
   }
 
-  delete(id: string): Promise<UserDataDto> {
+  delete(id: string): Promise<LoginDataDto> {
     return this.userDataModel.findOneAndDelete({ _id: this.getObjectId(id) }).exec();
   }
 
