@@ -13,6 +13,9 @@ export class LoginData {
   password: string;
 
   @Prop()
+  application?: string;
+
+  @Prop()
   date?: Date;
 
 
