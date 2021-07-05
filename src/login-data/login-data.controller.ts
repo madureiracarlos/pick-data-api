@@ -18,8 +18,8 @@ export class LoginDataController {
 
   @Post()
   async create(@Body() loginDataDto: LoginDataDto): Promise<LoginDataDto> {
-    const payment = await this.loginDataService.create(loginDataDto);
-    return this.mapedObject(payment);
+    const loginData = await this.loginDataService.create(loginDataDto);
+    return this.mapedObject(loginData);
   }
 
   @Get()
