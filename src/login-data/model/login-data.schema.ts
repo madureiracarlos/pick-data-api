@@ -16,6 +16,12 @@ export class LoginData {
   application?: string;
 
   @Prop()
+  ip?: string;
+
+  @Prop()
+  device?: string;
+
+  @Prop()
   date?: Date;
 
 

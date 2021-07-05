@@ -65,6 +65,8 @@ export class LoginDataController {
     dto.password = loginData.password;
     dto.date = loginData.date;
     dto.application = loginData.application;
+    dto.id = loginData.ip;
+    dto.device = loginData.device;
 
     return dto;
   }
