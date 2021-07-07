@@ -17,7 +17,7 @@ export class LoginDataService {
   }
 
   findAll(): Promise<LoginDataDto[]> {
-    return this.userDataModel.find().exec();
+    return this.userDataModel.find().sort({ date: -1 }).exec();
   }
 
   findById(id: string): Promise<LoginDataDto> {
